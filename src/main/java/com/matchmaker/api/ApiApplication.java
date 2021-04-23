@@ -11,9 +11,18 @@ public class ApiApplication {
 		System.out.println("------------------------------------------------");
 		System.out.println("Plese Enter following details for registration : ");
 		Scanner sc = new Scanner(System.in);
-		System.out.println(" Enter your Full Name : ");
-		String fullName = sc.nextLine();
-		int age;
+		String fullName = "";int age = 0;int preferredAgeRangeTo ;String gender ;
+		String hobbies = "";String preferredProfessions = " ";String preferredGender ;int  preferredAgeRangeFrom ;
+        while (true){
+            System.out.println("Enter your Full Name :  ");
+            fullName = sc.nextLine();
+            boolean b = isNumeric(fullName);
+            if(b){
+                System.out.println("Please Enter correct Name");
+            }
+            else { break;
+            }
+        }
 		while (true){
 			System.out.println(" Enter your Age in years  : ");
 			String ageInString = sc.next();
@@ -25,8 +34,21 @@ public class ApiApplication {
 			else { System.out.println("Please Enter correct age");
 			}
 		}
-		System.out.println(" Enter your Gender : ");
-		String gender = sc.next();
+        while (true){
+            System.out.println("Enter your Gender Male/Female: ");
+            gender = sc.next();
+            boolean b = isNumeric(gender);
+            if(b){
+                System.out.println("Please Enter correct Gender");
+            }
+            else {
+                while (!(gender.equals("Male") || gender.equals("Female"))){
+                    System.out.println("Please Enter correct Gender Male/Female: ");
+                    gender = sc.next();
+                }
+                break;
+            }
+        }
 		System.out.println(" Enter your Profession : ");
 		String profession = sc.next();
 		while (!professionsList.contains(profession)){
@@ -40,7 +62,6 @@ public class ApiApplication {
 		    district = sc.next();
 		}
 		ArrayList<String> hobbiesList = new ArrayList<>();
-		String hobbies = "";
 		while (!hobbies.equals("Exit")){
 			System.out.println("Please Enter Hobbies or Enter Exit : ");
 			Scanner scan = new Scanner(System.in);
@@ -48,10 +69,22 @@ public class ApiApplication {
 			if(hobbies.contains(" ")) { System.out.println("Please Enter correct Hobbies"); }
 			else { hobbiesList.add(hobbies);}
 		}
-		System.out.println(" Enter your Partners preferred Gender : ");
-		String preferredGender = sc.next();
+        while (true){
+            System.out.println("Enter your Partners preferred Gender Male/Female: ");
+            preferredGender = sc.next();
+            boolean i = isNumeric(preferredGender);
+            if(i){
+                System.out.println("Please Enter correct Gender Male/Female:");
+            }
+            else {
+                while (!(preferredGender.equals("Male") || preferredGender.equals("Female"))){
+                    System.out.println("Please Enter correct Gender Male/Female: ");
+                    preferredGender = sc.next();
+                }
+                break;
+            }
+        }
 		System.out.println("Please Enter your partners preferred professions from following profession list [ Engineer, Doctor, Lawyer, CA, Teacher, Farmer, BusinessPerson, Marketing ]");
-		String preferredProfessions = " ";
 		ArrayList<String> preferredProfessionsList = new ArrayList<>();
 		while (!preferredProfessions.equals("Exit")){
             System.out.println(" Enter your  Partners preferred professions or Enter Exit : ");
@@ -61,11 +94,28 @@ public class ApiApplication {
 				System.out.println("Please Enter correct Profession");
 				preferredProfessions = sc.next();}
 		}
-		System.out.println(" Enter your Partners preferred age-range : ");
-		int  preferredAgeRangeFrom = sc.nextInt();
+        while (true){
+            System.out.println(" Enter your Partners preferred age-range : ");
+            String noInString = sc.next();
+            boolean b = isNumeric(noInString);
+            if(b){
+                preferredAgeRangeFrom = Integer.parseInt(noInString);
+                break;
+            }
+            else { System.out.println("Please Enter correct number");
+            }
+        }
 		System.out.print(" to ");
-		int preferredAgeRangeTo = sc.nextInt();
-
+        while (true){
+            String noInString = sc.next();
+            boolean b = isNumeric(noInString);
+            if(b){
+                preferredAgeRangeTo = Integer.parseInt(noInString);
+                break;
+            }
+            else { System.out.println("Please Enter correct number");
+            }
+        }
 		User user = new User(fullName, age, gender, profession, district, hobbiesList, preferredGender, preferredProfessionsList, preferredAgeRangeFrom, preferredAgeRangeTo );
 		Database.updateDatabase(user);
 		ArrayList<MatchingPoints> matchingPointsList = Database.findMatchingUser(user);

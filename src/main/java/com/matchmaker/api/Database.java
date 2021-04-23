@@ -5,6 +5,9 @@ import java.util.HashMap;
 
 public class Database {
 
+    public String  printMonika() {
+        return "Monika";
+    }
     public static ArrayList<User> userList = new ArrayList<>();
     public static ArrayList<User> initialValidUserList = new ArrayList<>();
     static Map<String, ArrayList<String>> districtMap = new HashMap<>();
@@ -16,17 +19,17 @@ public class Database {
 
     public static
     void initializeDatabase() {
-        User babitaShinde = new User("Babita Shinde", 28,"F","Doctor","Nagpur", new ArrayList<>(List.of("Playing", "Singing", "Dancing","Trekking")), "M", new ArrayList<>(List.of("Engineer", "Doctor", "Lawyer", "CA", "Teacher", "Farmer", "BusinessPerson", "Marketing")),26,35);
-        User ishaJadhav = new User("Isha Jadhav", 26,"F","Engineer","Yavatmal", new ArrayList<>(List.of("Playing", "Singing","Travelling")), "M", new ArrayList<>(List.of("Engineer", "Doctor", "Lawyer", "CA", "Teacher")),26,35);
-        User UnnatiPande = new User("Unnati Pande",30,"F","CA","Wardha", new ArrayList<>(List.of("Playing")), "M", new ArrayList<>(List.of("CA", "Teacher", "Farmer", "BusinessPerson", "Marketing")),30,35);
-        User vaishnaviNagmote = new User("Vaishnavi Nagmote",32,"F","Lawyer","Nanded", new ArrayList<>(List.of("Playing","Trekking","swimming")), "M", new ArrayList<>(List.of("CA", "Teacher", "Farmer", "BusinessPerson", "Marketing")),30,40);
-        User shraddhaKadu = new User("Shraddha Kadu",35,"F","Farmer","Washim", new ArrayList<>(List.of("Playing","Travelling","Trekking")), "M", new ArrayList<>(List.of("CA", "Teacher", "Farmer", "BusinessPerson", "Marketing")),30,40);
+        User babitaShinde = new User("Babita Shinde", 28,"Female","Doctor","Nagpur", new ArrayList<>(List.of("Playing", "Singing", "Dancing","Trekking")), "M", new ArrayList<>(List.of("Engineer", "Doctor", "Lawyer", "CA", "Teacher", "Farmer", "BusinessPerson", "Marketing")),26,35);
+        User ishaJadhav = new User("Isha Jadhav", 26,"Female","Engineer","Yavatmal", new ArrayList<>(List.of("Playing", "Singing","Travelling")), "M", new ArrayList<>(List.of("Engineer", "Doctor", "Lawyer", "CA", "Teacher")),26,35);
+        User UnnatiPande = new User("Unnati Pande",30,"Female","CA","Wardha", new ArrayList<>(List.of("Playing")), "M", new ArrayList<>(List.of("CA", "Teacher", "Farmer", "BusinessPerson", "Marketing")),30,35);
+        User vaishnaviNagmote = new User("Vaishgit navi Nagmote",32,"Female","Lawyer","Nanded", new ArrayList<>(List.of("Playing","Trekking","swimming")), "M", new ArrayList<>(List.of("CA", "Teacher", "Farmer", "BusinessPerson", "Marketing")),30,40);
+        User shraddhaKadu = new User("Shraddha Kadu",35,"Female","Farmer","Washim", new ArrayList<>(List.of("Playing","Travelling","Trekking")), "M", new ArrayList<>(List.of("CA", "Teacher", "Farmer", "BusinessPerson", "Marketing")),30,40);
 
-        User abhishekDeshmukh = new User("Abhishek Deshmukh", 27,"M","Farmer","Amravati", new ArrayList<>(List.of("Playing")), "F", new ArrayList<>(List.of("Doctor", "Engineer","CA", "Teacher", "Farmer", "BusinessPerson", "Marketing")), 26,35);
-        User nileshYadav = new User("Nilesh Yadav", 25,"M","Engineer","Yavatmal", new ArrayList<>(List.of("Playing", "Singing", "Dancing","Travelling")), "F", new ArrayList<>(List.of("Doctor", "Engineer", "Lawyer", "CA", "Teacher", "Farmer")), 26,35);
-        User ujwalPrasad = new User("Ujwal Prasad", 28,"M","Lawyer","Akola", new ArrayList<>(List.of("Playing", "Singing","Trekking")), "F", new ArrayList<>(List.of("Doctor", "Engineer","CA", "Teacher", "Farmer", "BusinessPerson", "Marketing")), 26,35);
-        User vitthalKamat = new User("Vitthal Kamat", 33,"M","Marketing","Nanded", new ArrayList<>(List.of("Playing", "Singing","Travelling")), "F", new ArrayList<>(List.of("Doctor", "Engineer", "CA", "Teacher", "Farmer")), 26,35);
-        User harshalButale = new User("Harshal Butale", 29,"M","BusinessPerson","Buldhana", new ArrayList<>(List.of("Playing", "Singing","Travelling")), "F", new ArrayList<>(List.of("Doctor", "Engineer", "BusinessPerson", "Marketing")), 26,35);
+        User abhishekDeshmukh = new User("Abhishek Deshmukh", 27,"Male","Farmer","Amravati", new ArrayList<>(List.of("Playing")), "F", new ArrayList<>(List.of("Doctor", "Engineer","CA", "Teacher", "Farmer", "BusinessPerson", "Marketing")), 26,35);
+        User nileshYadav = new User("Nilesh Yadav", 25,"Male","Engineer","Yavatmal", new ArrayList<>(List.of("Playing", "Singing", "Dancing","Travelling")), "F", new ArrayList<>(List.of("Doctor", "Engineer", "Lawyer", "CA", "Teacher", "Farmer")), 26,35);
+        User ujwalPrasad = new User("Ujwal Prasad", 28,"Male","Lawyer","Akola", new ArrayList<>(List.of("Playing", "Singing","Trekking")), "F", new ArrayList<>(List.of("Doctor", "Engineer","CA", "Teacher", "Farmer", "BusinessPerson", "Marketing")), 26,35);
+        User vitthalKamat = new User("Vitthal Kamat", 33,"Male","Marketing","Nanded", new ArrayList<>(List.of("Playing", "Singing","Travelling")), "F", new ArrayList<>(List.of("Doctor", "Engineer", "CA", "Teacher", "Farmer")), 26,35);
+        User harshalButale = new User("Harshal Butale", 29,"Male","BusinessPerson","Buldhana", new ArrayList<>(List.of("Playing", "Singing","Travelling")), "F", new ArrayList<>(List.of("Doctor", "Engineer", "BusinessPerson", "Marketing")), 26,35);
 
         userList.add(babitaShinde);
         userList.add(ishaJadhav);
